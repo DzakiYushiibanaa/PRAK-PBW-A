@@ -33,7 +33,12 @@
                 <x-table.td>{{ $user->name }}</x-table.td>
                 <x-table.td>{{ $user->email }}</x-table.td>
                 <x-table.td>{{ (new \Carbon\Carbon($user->published_at))->format('d M Y') }}</x-table.td>
-                <x-table.td><a href="/users/{{ $user->id }}">View</a></x-table.td>
+                <x-table.td>
+                    <div class="flex justify-end gap-x-2">
+                    <a href="/users/{{ $user->id }}" class="hover:underline" >View</a>
+                    <a href="/users/{{ $user->id }}/edit" class="hover:underline" >Edit</a>
+                    </div>
+                </x-table.td>
             </tr>
 
 
